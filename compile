@@ -1,0 +1,4 @@
+convert mouse.png -define icon:auto-resize=64,48,32,16 mouse.ico
+rsrc -ico mouse.ico rsrc.syso
+GOOS=windows GOARCH=amd64 go build -ldflags="-H windowsgui -w -s" -o mouse.exe .
+upx mouse.exe
